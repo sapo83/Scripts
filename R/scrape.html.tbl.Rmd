@@ -1,0 +1,21 @@
+library(rvest)
+library(plyr)
+
+## set webpage URL
+webpage <- read_html("http://www.pathogenomics.sfu.ca/pathogen-associated/2014/")
+
+## Captures all tables on the webpage
+tbls <- html_nodes(webpage, "table")
+
+## Subsets the list of nodes, based on table of choice
+## parse HTML table
+tbls_ls <- webpage %>% html_nodes("table") %>% .[0:1] %>% html_table(fill = TRUE)
+
+## Rename columns
+colnames(tbls_ls[[1]]) <- c("Status", "Organism", "File")
+
+## Convert list of tables to single data frame
+df <- ldply(tbls_ls, data.frame)
+
+## Cut first 4 rows, with noise in them, from data frame
+df2<-tail(df, -4)
