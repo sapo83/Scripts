@@ -1,3 +1,3 @@
 ### Bash scripts
 
-parallel.for.loop - run multiple instances of for loop
+parallel.for.loop.sh - run multiple instances of for loop
