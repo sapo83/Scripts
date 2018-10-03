@@ -6,7 +6,6 @@ use Bio::SeqIO;
 ### output - sequence id & sequence length, tab separated
 
 my $inputFasta = @ARGV[0];
-#my $index;
 
 my $inseq  = Bio::SeqIO->new(-file => "$inputFasta", -format => "fasta");
 
