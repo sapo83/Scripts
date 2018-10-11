@@ -1,0 +1,45 @@
+### Get level 6 GO terms for all three categories
+### Can be changed to get different level of terms if needed
+
+library(GO.db)
+
+getAllBPChildren <- function(goids)
+  {
+    ans <- unique(unlist(mget(goids, GOBPCHILDREN), use.names=FALSE))
+    ans <- ans[!is.na(ans)]
+  }
+
+level1_BP_terms <- getAllBPChildren("GO:0008150")
+level2_BP_terms <- getAllBPChildren(level1_BP_terms)
+level3_BP_terms <- getAllBPChildren(level2_BP_terms)
+level4_BP_terms <- getAllBPChildren(level3_BP_terms)
+level5_BP_terms <- getAllBPChildren(level4_BP_terms)
+level6_BP_terms <- getAllBPChildren(level5_BP_terms)
+
+
+getAllMFChildren <- function(goids)
+  {
+    ans <- unique(unlist(mget(goids, GOMFCHILDREN), use.names=FALSE))
+    ans <- ans[!is.na(ans)]
+  }
+
+level1_MF_terms <- getAllMFChildren("GO:0003674")
+level2_MF_terms <- getAllMFChildren(level1_MF_terms)
+level3_MF_terms <- getAllMFChildren(level2_MF_terms)
+level4_MF_terms <- getAllMFChildren(level3_MF_terms)
+level5_MF_terms <- getAllMFChildren(level4_MF_terms)
+level6_MF_terms <- getAllMFChildren(level5_MF_terms)
+
+
+getAllCCChildren <- function(goids)
+  {
+    ans <- unique(unlist(mget(goids, GOCCCHILDREN), use.names=FALSE))
+    ans <- ans[!is.na(ans)]
+  }
+
+level1_CC_terms <- getAllCCChildren("GO:0005575")
+level2_CC_terms <- getAllCCChildren(level1_CC_terms)
+level3_CC_terms <- getAllCCChildren(level2_CC_terms)
+level4_CC_terms <- getAllCCChildren(level3_CC_terms)
+level5_CC_terms <- getAllCCChildren(level4_CC_terms)
+level6_CC_terms <- getAllCCChildren(level5_CC_terms)
