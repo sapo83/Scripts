@@ -1,4 +1,4 @@
-### 1. Checkout the file(s)/directory (from source branch) you want to push -
+### 1. Checkout the file(s)/directory (from source branch) you want to push
 ```
 git checkout Sarah_test_dataset test_dir/ _init.R
 ```
