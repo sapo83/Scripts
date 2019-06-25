@@ -3,7 +3,7 @@
 git clone -b TCGA_QUORRY_CRSV1902 git@sc.unc.edu:dbortone/dataset_prep.git TCGA_QUORRY_CRSV1902_dev_sae
 ```
 
-### 2. change into new cloned branch
+### 2. Change into new cloned branch
 ```
 cd TCGA_QUORRY_CRSV1902_dev_sae/
 ```
