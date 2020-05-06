@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ### max number of processes - may vary by user
 number=480
 
